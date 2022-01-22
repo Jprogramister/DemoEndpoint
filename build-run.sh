@@ -1,0 +1,1 @@
+./mvnw package && java -jar target/endpoint-demo-1.0-SNAPSHOT.jar
