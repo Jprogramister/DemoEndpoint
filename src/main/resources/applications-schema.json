@@ -7,7 +7,6 @@
       "description": "Уникальный идентификатор заявки у партнера, UUID",
       "maxLength": 36,
       "minLength": 36,
-      "pattern": "^[\\-\\d 0-9a-zA-Z]*$",
       "type": "string"
     },
     "applicationStatusCode": {
@@ -68,7 +67,6 @@
           "description": "Идентификатор клиента (ID абонента)",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\d 0-9a-zA-Z]*$",
           "type": "string"
         },
         "personalData": {
@@ -91,7 +89,6 @@
           "description": "СНИЛС",
           "maxLength": 11,
           "minLength": 11,
-          "pattern": "^\\d*$",
           "type": "string"
         },
         "regLive": {
@@ -159,21 +156,18 @@
           "description": "Фамилия",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
           "type": "string"
         },
         "name": {
           "description": "Имя",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
           "type": "string"
         },
         "patronymic": {
           "description": "Отчество",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
           "type": "string"
         },
         "birthDate": {
@@ -184,7 +178,6 @@
           "description": "Место рождения",
           "maxLength": 80,
           "minLength": 1,
-          "pattern": "^[.,\\/()\\\\\\-\\－\"«»_ 0-9а-яёА-ЯЁ]*$",
           "type": "string"
         }
       },
@@ -198,21 +191,18 @@
           "description": "Прежняя фамилия",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
           "type": "string"
         },
         "name": {
           "description": "Прежнее имя",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
           "type": "string"
         },
         "patronymic": {
           "description": "Прежнее отчество",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
           "type": "string"
         }
       },
@@ -241,14 +231,12 @@
           "description": "Номер документа",
           "maxLength": 6,
           "minLength": 6,
-          "pattern": "^\\d*$",
           "type": "string"
         },
         "docSeries": {
           "description": "Серия документа",
           "maxLength": 4,
           "minLength": 4,
-          "pattern": "^\\d*$",
           "type": "string"
         },
         "issueDate": {
@@ -259,14 +247,12 @@
           "description": "Кем выдан документ",
           "maxLength": 200,
           "minLength": 1,
-          "pattern": "^[.,\\/()\\\\\\-\\－\"«»№ 0-9а-яёА-ЯЁ]*$",
           "type": "string"
         },
         "departCode": {
           "description": "Категория (код подразделения)",
           "maxLength": 6,
           "minLength": 6,
-          "pattern": "^\\d*$",
           "type": "string"
         },
         "isActual": {
@@ -351,7 +337,6 @@
           "description": "E-mail",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[A-Za-z0-9а-яёА-ЯЁ._\\-+']+@[a-zA-Z0-9а-яёА-ЯЁ\\-_]+\\.[a-zA-Z0-9а-яёА-ЯЁ\\-_]+$",
           "type": "string"
         }
       },
@@ -380,7 +365,6 @@
           "description": "Номер телефона",
           "maxLength": 12,
           "minLength": 12,
-          "pattern": "^\\+7\\d{10}$",
           "type": "string"
         }
       },
@@ -394,7 +378,6 @@
           "description": "Наименование должности",
           "maxLength": 250,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "lastExperience": {
@@ -447,14 +430,12 @@
           "description": "Полное наименование организации",
           "maxLength": 300,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "inn": {
           "description": "ИНН работодателя",
           "maxLength": 12,
           "minLength": 10,
-          "pattern": "^\\d*$",
           "type": "string"
         }
       },
@@ -583,63 +564,54 @@
           "description": "Почтовый индекс",
           "maxLength": 6,
           "minLength": 6,
-          "pattern": "^\\d*$",
           "type": "string"
         },
         "district": {
           "description": "Наименование района",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "city": {
           "description": "Наименование города",
           "maxLength": 60,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "locality": {
           "description": "Наименование населенного пункта",
           "maxLength": 255,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "street": {
           "description": "Наименование улицы",
           "maxLength": 255,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "house": {
           "description": "Дом",
           "maxLength": 10,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "housing": {
           "description": "Корпус",
           "maxLength": 10,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "building": {
           "description": "Строение",
           "maxLength": 10,
           "minLength": 1,
-          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
           "type": "string"
         },
         "flat": {
           "description": "Квартира",
           "maxLength": 10,
           "minLength": 1,
-          "pattern": "^[.,'\":;&?_()№@\\\\\\/\\-\\d 0-9a-zA-Z]*$",
           "type": "string"
         }
       },
