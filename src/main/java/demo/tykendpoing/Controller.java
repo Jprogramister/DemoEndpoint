@@ -1,5 +1,6 @@
 package demo.tykendpoing;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,12 @@ import java.util.Random;
 
 @RestController
 public class Controller {
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<?> onError() {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+
     @PostMapping("/applications")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> postApplications(@RequestBody Map<String, Object> body,
