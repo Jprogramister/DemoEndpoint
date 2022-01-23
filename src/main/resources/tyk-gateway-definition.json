@@ -1,0 +1,1089 @@
+{
+  "id": "61ed5c0139996f00018a9392",
+  "name": "Loan demo",
+  "slug": "loan-demo",
+  "listen_port": 0,
+  "protocol": "http",
+  "enable_proxy_protocol": false,
+  "api_id": "47d13aa5bf8a495d5eaf2ff98ba64521",
+  "org_id": "61ea96b6747e550001d311c8",
+  "use_keyless": true,
+  "use_oauth2": false,
+  "use_openid": false,
+  "openid_options": {
+    "providers": [],
+    "segregate_by_client": false
+  },
+  "oauth_meta": {
+    "allowed_access_types": [],
+    "allowed_authorize_types": [],
+    "auth_login_redirect": ""
+  },
+  "auth": {
+    "use_param": false,
+    "param_name": "",
+    "use_cookie": false,
+    "cookie_name": "",
+    "auth_header_name": "Authorization",
+    "use_certificate": false,
+    "validate_signature": false,
+    "signature": {
+      "algorithm": "",
+      "header": "",
+      "secret": "",
+      "allowed_clock_skew": 0,
+      "error_code": 0,
+      "error_message": ""
+    }
+  },
+  "auth_configs": {
+    "authToken": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    },
+    "basic": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    },
+    "coprocess": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    },
+    "hmac": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    },
+    "jwt": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    },
+    "oauth": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    },
+    "oidc": {
+      "use_param": false,
+      "param_name": "",
+      "use_cookie": false,
+      "cookie_name": "",
+      "auth_header_name": "Authorization",
+      "use_certificate": false,
+      "validate_signature": false,
+      "signature": {
+        "algorithm": "",
+        "header": "",
+        "secret": "",
+        "allowed_clock_skew": 0,
+        "error_code": 0,
+        "error_message": ""
+      }
+    }
+  },
+  "use_basic_auth": false,
+  "basic_auth": {
+    "disable_caching": false,
+    "cache_ttl": 0,
+    "extract_from_body": false,
+    "body_user_regexp": "",
+    "body_password_regexp": ""
+  },
+  "use_mutual_tls_auth": false,
+  "client_certificates": [],
+  "upstream_certificates": {},
+  "pinned_public_keys": {},
+  "enable_jwt": false,
+  "use_standard_auth": false,
+  "use_go_plugin_auth": false,
+  "enable_coprocess_auth": false,
+  "jwt_signing_method": "",
+  "jwt_source": "",
+  "jwt_identity_base_field": "",
+  "jwt_client_base_field": "",
+  "jwt_policy_field_name": "",
+  "jwt_default_policies": [],
+  "jwt_issued_at_validation_skew": 0,
+  "jwt_expires_at_validation_skew": 0,
+  "jwt_not_before_validation_skew": 0,
+  "jwt_skip_kid": false,
+  "jwt_scope_to_policy_mapping": {},
+  "jwt_scope_claim_name": "",
+  "notifications": {
+    "shared_secret": "",
+    "oauth_on_keychange_url": ""
+  },
+  "enable_signature_checking": false,
+  "hmac_allowed_clock_skew": -1,
+  "hmac_allowed_algorithms": [],
+  "request_signing": {
+    "is_enabled": false,
+    "secret": "",
+    "key_id": "",
+    "algorithm": "",
+    "header_list": [],
+    "certificate_id": "",
+    "signature_header": ""
+  },
+  "base_identity_provided_by": "",
+  "definition": {
+    "location": "header",
+    "key": "x-api-version",
+    "strip_path": false
+  },
+  "version_data": {
+    "not_versioned": true,
+    "default_version": "",
+    "versions": {
+      "Default": {
+        "name": "Default",
+        "expires": "",
+        "paths": {
+          "ignored": [],
+          "white_list": [],
+          "black_list": []
+        },
+        "use_extended_paths": true,
+        "extended_paths": {
+          "validate_json": [
+            {
+              "path": "/applications",
+              "method": "POST",
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "additionalProperties": false,
+                "definitions": {
+                  "Address": {
+                    "additionalProperties": false,
+                    "description": "Адрес",
+                    "properties": {
+                      "addressType": {
+                        "description": "Код типа адреса",
+                        "enum": [
+                          "1",
+                          "2",
+                          "4",
+                          "3"
+                        ],
+                        "type": "string"
+                      },
+                      "building": {
+                        "description": "Строение",
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "city": {
+                        "description": "Наименование города",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "countryCode": {
+                        "description": "Код страны",
+                        "enum": [
+                          "643"
+                        ],
+                        "type": "string"
+                      },
+                      "district": {
+                        "description": "Наименование района",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "flat": {
+                        "description": "Квартира",
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "house": {
+                        "description": "Дом",
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "housing": {
+                        "description": "Корпус",
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "locality": {
+                        "description": "Наименование населенного пункта",
+                        "maxLength": 255,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "description": "Почтовый индекс",
+                        "maxLength": 6,
+                        "minLength": 6,
+                        "type": "string"
+                      },
+                      "regionCode": {
+                        "description": "Код региона",
+                        "enum": [
+                          "77",
+                          "1",
+                          "2",
+                          "3",
+                          "4",
+                          "5",
+                          "6",
+                          "7",
+                          "8",
+                          "9",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16",
+                          "17",
+                          "18",
+                          "19",
+                          "20",
+                          "21",
+                          "22",
+                          "23",
+                          "24",
+                          "25",
+                          "26",
+                          "27",
+                          "28",
+                          "29",
+                          "30",
+                          "31",
+                          "32",
+                          "33",
+                          "34",
+                          "35",
+                          "36",
+                          "37",
+                          "38",
+                          "39",
+                          "40",
+                          "41",
+                          "42",
+                          "43",
+                          "44",
+                          "45",
+                          "46",
+                          "47",
+                          "48",
+                          "49",
+                          "50",
+                          "51",
+                          "52",
+                          "53",
+                          "54",
+                          "55",
+                          "56",
+                          "57",
+                          "58",
+                          "59",
+                          "60",
+                          "61",
+                          "62",
+                          "63",
+                          "64",
+                          "65",
+                          "66",
+                          "67",
+                          "68",
+                          "69",
+                          "70",
+                          "71",
+                          "72",
+                          "73",
+                          "74",
+                          "75",
+                          "76",
+                          "78",
+                          "79",
+                          "83",
+                          "86",
+                          "87",
+                          "89",
+                          "91",
+                          "92",
+                          "99"
+                        ],
+                        "type": "string"
+                      },
+                      "street": {
+                        "description": "Наименование улицы",
+                        "maxLength": 255,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "addressType",
+                      "countryCode",
+                      "regionCode",
+                      "postalCode"
+                    ],
+                    "type": "object"
+                  },
+                  "ContactInfo": {
+                    "additionalProperties": false,
+                    "description": "Контакты клиента",
+                    "properties": {
+                      "email": {
+                        "description": "E-mail",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "phones": {
+                        "description": "Контактные телефоны",
+                        "items": {
+                          "$ref": "#/definitions/Phone"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "phones"
+                    ],
+                    "type": "object"
+                  },
+                  "CreateApplicationResponse": {
+                    "additionalProperties": false,
+                    "description": "Ответ на заявку",
+                    "properties": {
+                      "id": {
+                        "description": "Номер заявки в Банке",
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "Employer": {
+                    "additionalProperties": false,
+                    "description": "Работодатель",
+                    "properties": {
+                      "fullName": {
+                        "description": "Полное наименование организации",
+                        "maxLength": 300,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "inn": {
+                        "description": "ИНН работодателя",
+                        "maxLength": 12,
+                        "minLength": 10,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "fullName",
+                      "inn"
+                    ],
+                    "type": "object"
+                  },
+                  "Employment": {
+                    "additionalProperties": false,
+                    "description": "Работа",
+                    "properties": {
+                      "employer": {
+                        "$ref": "#/definitions/Employer",
+                        "description": "Работодатель"
+                      },
+                      "lastExperience": {
+                        "$ref": "#/definitions/Experience",
+                        "description": "Стаж на последнем месте работы"
+                      },
+                      "positionName": {
+                        "description": "Наименование должности",
+                        "maxLength": 250,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "totalExperience": {
+                        "$ref": "#/definitions/Experience",
+                        "description": "Общий стаж"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "Experience": {
+                    "additionalProperties": false,
+                    "description": "Стаж",
+                    "properties": {
+                      "months": {
+                        "description": "Стаж работы - в месяцах",
+                        "maximum": 11,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "years": {
+                        "description": "Стаж работы - в годах",
+                        "maximum": 70,
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "years",
+                      "months"
+                    ],
+                    "type": "object"
+                  },
+                  "IdentityDocument": {
+                    "additionalProperties": false,
+                    "description": "ДУЛ",
+                    "properties": {
+                      "departCode": {
+                        "description": "Категория (код подразделения)",
+                        "maxLength": 6,
+                        "minLength": 6,
+                        "type": "string"
+                      },
+                      "docNum": {
+                        "description": "Номер документа",
+                        "maxLength": 6,
+                        "minLength": 6,
+                        "type": "string"
+                      },
+                      "docSeries": {
+                        "description": "Серия документа",
+                        "maxLength": 4,
+                        "minLength": 4,
+                        "type": "string"
+                      },
+                      "docType": {
+                        "description": "Тип ДУЛ",
+                        "enum": [
+                          "1"
+                        ],
+                        "type": "string"
+                      },
+                      "isActual": {
+                        "description": "Признак актуального паспорта",
+                        "type": "boolean"
+                      },
+                      "issueDate": {
+                        "description": "Дата выдачи",
+                        "type": "string"
+                      },
+                      "issuedBy": {
+                        "description": "Кем выдан документ",
+                        "maxLength": 200,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "docType",
+                      "docNum",
+                      "docSeries",
+                      "issueDate",
+                      "departCode",
+                      "isActual"
+                    ],
+                    "type": "object"
+                  },
+                  "Income": {
+                    "additionalProperties": false,
+                    "description": "Доход",
+                    "properties": {
+                      "avgMonthlyIncome": {
+                        "description": "Сумма среднемесячных доходов",
+                        "maximum": 1000000000,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "confirmationType": {
+                        "description": "Тип подтверждения дохода",
+                        "enum": [
+                          "appForm"
+                        ],
+                        "type": "string"
+                      },
+                      "incomeType": {
+                        "description": "Код типа дохода",
+                        "enum": [
+                          "StatedIncome",
+                          "OtherIncome"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "confirmationType",
+                      "incomeType",
+                      "avgMonthlyIncome"
+                    ],
+                    "type": "object"
+                  },
+                  "Participant": {
+                    "additionalProperties": false,
+                    "description": "Участник сделки",
+                    "properties": {
+                      "addresses": {
+                        "description": "Адреса",
+                        "items": {
+                          "$ref": "#/definitions/Address"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "contactInfo": {
+                        "$ref": "#/definitions/ContactInfo",
+                        "description": "Контакты"
+                      },
+                      "employment": {
+                        "$ref": "#/definitions/Employment",
+                        "description": "Занятость"
+                      },
+                      "extClientId": {
+                        "description": "Идентификатор клиента (ID абонента)",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "identityDocuments": {
+                        "description": "Список ДУЛ",
+                        "items": {
+                          "$ref": "#/definitions/IdentityDocument"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "incomes": {
+                        "description": "Доходы",
+                        "items": {
+                          "$ref": "#/definitions/Income"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "personalData": {
+                        "$ref": "#/definitions/PersonalData",
+                        "description": "Персональные данные клиента."
+                      },
+                      "previousName": {
+                        "$ref": "#/definitions/PreviousName",
+                        "description": "Прежнее ФИО"
+                      },
+                      "properties": {
+                        "description": "Список собственности",
+                        "items": {
+                          "$ref": "#/definitions/Property"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "regLive": {
+                        "description": "Признак совпадения адреса постоянной регистрации и адреса фактического проживания",
+                        "type": "boolean"
+                      },
+                      "resident": {
+                        "description": "Признак, что клиент является налоговым резидентом только РФ.",
+                        "type": "boolean"
+                      },
+                      "sex": {
+                        "description": "Код пола участника сделки. Значение в соответствии со справочником «Пол участника сделки»",
+                        "enum": [
+                          "0",
+                          "1"
+                        ],
+                        "type": "string"
+                      },
+                      "snils": {
+                        "description": "СНИЛС",
+                        "maxLength": 11,
+                        "minLength": 11,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "extClientId",
+                      "personalData",
+                      "sex",
+                      "resident",
+                      "regLive",
+                      "identityDocuments",
+                      "incomes",
+                      "properties",
+                      "contactInfo",
+                      "employment",
+                      "addresses"
+                    ],
+                    "type": "object"
+                  },
+                  "PersonalData": {
+                    "additionalProperties": false,
+                    "description": "Персональные данные участника сделки",
+                    "properties": {
+                      "birthDate": {
+                        "description": "Дата рождения",
+                        "type": "string"
+                      },
+                      "birthPlace": {
+                        "description": "Место рождения",
+                        "maxLength": 80,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Имя",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "patronymic": {
+                        "description": "Отчество",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "surname": {
+                        "description": "Фамилия",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "surname",
+                      "name",
+                      "birthDate",
+                      "birthPlace"
+                    ],
+                    "type": "object"
+                  },
+                  "Phone": {
+                    "additionalProperties": false,
+                    "description": "Телефон клиента",
+                    "properties": {
+                      "number": {
+                        "description": "Номер телефона",
+                        "maxLength": 12,
+                        "minLength": 12,
+                        "type": "string"
+                      },
+                      "phoneType": {
+                        "description": "Код типа контакта (телефона)",
+                        "enum": [
+                          "CELLPHONE",
+                          "LIVEADDRESS_PHONE",
+                          "REGADDRESS_PHONE",
+                          "KADRPHONE",
+                          "EMPLOYERPHONE"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "phoneType",
+                      "number"
+                    ],
+                    "type": "object"
+                  },
+                  "PreviousName": {
+                    "additionalProperties": false,
+                    "description": "Прежнее ФИО",
+                    "properties": {
+                      "name": {
+                        "description": "Прежнее имя",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "patronymic": {
+                        "description": "Прежнее отчество",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "surname": {
+                        "description": "Прежняя фамилия",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "Property": {
+                    "additionalProperties": false,
+                    "description": "Собственность клиента",
+                    "properties": {
+                      "existence": {
+                        "description": "Признак наличия собственности",
+                        "type": "boolean"
+                      },
+                      "propertyType": {
+                        "description": "Тип собственности",
+                        "enum": [
+                          "auto",
+                          "property"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "propertyType",
+                      "existence"
+                    ],
+                    "type": "object"
+                  },
+                  "RequestCreditParameters": {
+                    "additionalProperties": false,
+                    "description": "Запрос параметров кредита",
+                    "properties": {
+                      "amount": {
+                        "description": "Запрашиваемая сумма кредита",
+                        "maximum": 10000000,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "currency": {
+                        "description": "Валюта кредита. Допустимое значение – 810 (рубль)",
+                        "enum": [
+                          810
+                        ],
+                        "type": "integer"
+                      },
+                      "direction": {
+                        "description": "Направление кредитования в соответствии со справочником «Направление кредитования». Допустимое значение «01.00.00» - Потребительское кредитование",
+                        "enum": [
+                          "01.00.00"
+                        ],
+                        "type": "string"
+                      },
+                      "insurance": {
+                        "description": "Признак наличия страховки",
+                        "type": "boolean"
+                      },
+                      "subProgramCode": {
+                        "description": "Код подпрограммы в соответствии со справочником «Тип подпрограммы»",
+                        "enum": [
+                          "01.18.00"
+                        ],
+                        "type": "string"
+                      },
+                      "term": {
+                        "description": "Запрашиваемый срок кредита",
+                        "maximum": 600,
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "direction",
+                      "subProgramCode",
+                      "amount",
+                      "term",
+                      "currency"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "description": "Заявка на потребительский кредит",
+                "properties": {
+                  "applicationStatusCode": {
+                    "description": "Код состояния заявки",
+                    "enum": [
+                      "INPUT_INITIAL",
+                      "OFFER_SIGN",
+                      "CONTRACT_SIGN",
+                      "COMPLETED",
+                      "REJECT_BANK",
+                      "REJECT_CLIENT",
+                      "PROCESSING"
+                    ],
+                    "type": "string"
+                  },
+                  "applicationStatusName": {
+                    "description": "Наименование состояния заявки",
+                    "enum": [
+                      "Ввод данных",
+                      "Подписание оферты",
+                      "Подписание договора",
+                      "Обработка завершена",
+                      "Отказ Банка",
+                      "Отказ Клиента",
+                      "В обработке"
+                    ],
+                    "type": "string"
+                  },
+                  "externalId": {
+                    "description": "Уникальный идентификатор заявки у партнера, UUID",
+                    "maxLength": 36,
+                    "minLength": 36,
+                    "type": "string"
+                  },
+                  "participant": {
+                    "$ref": "#/definitions/Participant",
+                    "description": "Блок данных с участниками сделки"
+                  },
+                  "requestCreditParameters": {
+                    "$ref": "#/definitions/RequestCreditParameters",
+                    "description": "Блок с запрашиваемыми кредитными параметрами"
+                  }
+                },
+                "type": "object"
+              },
+              "error_response_code": 422
+            }
+          ]
+        },
+        "global_headers": {},
+        "global_headers_remove": [],
+        "global_response_headers": {},
+        "global_response_headers_remove": [],
+        "ignore_endpoint_case": false,
+        "global_size_limit": 0,
+        "override_target": ""
+      }
+    }
+  },
+  "uptime_tests": {
+    "check_list": [],
+    "config": {
+      "expire_utime_after": 0,
+      "service_discovery": {
+        "use_discovery_service": false,
+        "query_endpoint": "",
+        "use_nested_query": false,
+        "parent_data_path": "",
+        "data_path": "",
+        "port_data_path": "",
+        "target_path": "",
+        "use_target_list": false,
+        "cache_timeout": 60,
+        "endpoint_returns_list": false
+      },
+      "recheck_wait": 0
+    }
+  },
+  "proxy": {
+    "preserve_host_header": false,
+    "listen_path": "/loan-demo/",
+    "target_url": "http://52.91.5.34:8080",
+    "disable_strip_slash": true,
+    "strip_listen_path": true,
+    "enable_load_balancing": false,
+    "target_list": [],
+    "check_host_against_uptime_tests": false,
+    "service_discovery": {
+      "use_discovery_service": false,
+      "query_endpoint": "",
+      "use_nested_query": false,
+      "parent_data_path": "",
+      "data_path": "",
+      "port_data_path": "",
+      "target_path": "",
+      "use_target_list": false,
+      "cache_timeout": 0,
+      "endpoint_returns_list": false
+    },
+    "transport": {
+      "ssl_insecure_skip_verify": false,
+      "ssl_ciphers": [],
+      "ssl_min_version": 0,
+      "ssl_max_version": 0,
+      "ssl_force_common_name_check": false,
+      "proxy_url": ""
+    }
+  },
+  "disable_rate_limit": false,
+  "disable_quota": false,
+  "custom_middleware": {
+    "pre": [],
+    "post": [],
+    "post_key_auth": [],
+    "auth_check": {
+      "name": "",
+      "path": "",
+      "require_session": false,
+      "raw_body_only": false
+    },
+    "response": [],
+    "driver": "",
+    "id_extractor": {
+      "extract_from": "",
+      "extract_with": "",
+      "extractor_config": {}
+    }
+  },
+  "custom_middleware_bundle": "",
+  "cache_options": {
+    "cache_timeout": 60,
+    "enable_cache": true,
+    "cache_all_safe_requests": false,
+    "cache_response_codes": [],
+    "enable_upstream_cache_control": false,
+    "cache_control_ttl_header": "",
+    "cache_by_headers": []
+  },
+  "session_lifetime": 0,
+  "active": true,
+  "internal": false,
+  "auth_provider": {
+    "name": "",
+    "storage_engine": "",
+    "meta": {}
+  },
+  "session_provider": {
+    "name": "",
+    "storage_engine": "",
+    "meta": {}
+  },
+  "event_handlers": {
+    "events": {}
+  },
+  "enable_batch_request_support": false,
+  "enable_ip_whitelisting": false,
+  "allowed_ips": [],
+  "enable_ip_blacklisting": false,
+  "blacklisted_ips": [],
+  "dont_set_quota_on_create": false,
+  "expire_analytics_after": 0,
+  "response_processors": [],
+  "CORS": {
+    "enable": false,
+    "allowed_origins": [
+      "*"
+    ],
+    "allowed_methods": [
+      "GET",
+      "POST",
+      "HEAD"
+    ],
+    "allowed_headers": [
+      "Origin",
+      "Accept",
+      "Content-Type",
+      "X-Requested-With",
+      "Authorization"
+    ],
+    "exposed_headers": [],
+    "allow_credentials": false,
+    "max_age": 24,
+    "options_passthrough": false,
+    "debug": false
+  },
+  "domain": "",
+  "certificates": [],
+  "do_not_track": false,
+  "tags": [],
+  "enable_context_vars": false,
+  "config_data": {},
+  "tag_headers": [],
+  "global_rate_limit": {
+    "rate": 0,
+    "per": 0
+  },
+  "strip_auth_data": false,
+  "enable_detailed_recording": true,
+  "graphql": {
+    "enabled": false,
+    "execution_mode": "proxyOnly",
+    "version": "2",
+    "schema": "",
+    "type_field_configurations": [],
+    "playground": {
+      "enabled": false,
+      "path": ""
+    },
+    "engine": {
+      "field_configs": [],
+      "data_sources": []
+    },
+    "proxy": {
+      "auth_headers": {}
+    },
+    "subgraph": {
+      "sdl": ""
+    },
+    "supergraph": {
+      "subgraphs": [],
+      "merged_sdl": ""
+    }
+  }
+}
