@@ -1,0 +1,711 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Заявка на потребительский кредит",
+  "type": "object",
+  "properties": {
+    "externalId": {
+      "description": "Уникальный идентификатор заявки у партнера, UUID",
+      "maxLength": 36,
+      "minLength": 36,
+      "pattern": "^[\\-\\d 0-9a-zA-Z]*$",
+      "type": "string"
+    },
+    "applicationStatusCode": {
+      "description": "Код состояния заявки",
+      "enum": [
+        "INPUT_INITIAL",
+        "OFFER_SIGN",
+        "CONTRACT_SIGN",
+        "COMPLETED",
+        "REJECT_BANK",
+        "REJECT_CLIENT",
+        "PROCESSING"
+      ],
+      "type": "string"
+    },
+    "applicationStatusName": {
+      "description": "Наименование состояния заявки",
+      "enum": [
+        "Ввод данных",
+        "Подписание оферты",
+        "Подписание договора",
+        "Обработка завершена",
+        "Отказ Банка",
+        "Отказ Клиента",
+        "В обработке"
+      ],
+      "type": "string"
+    },
+    "participant": {
+      "$ref": "#/definitions/Participant",
+      "description": "Блок данных с участниками сделки"
+    },
+    "requestCreditParameters": {
+      "$ref": "#/definitions/RequestCreditParameters",
+      "description": "Блок с запрашиваемыми кредитными параметрами"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "Participant": {
+      "description": "Участник сделки",
+      "required": [
+        "extClientId",
+        "personalData",
+        "sex",
+        "resident",
+        "regLive",
+        "identityDocuments",
+        "incomes",
+        "properties",
+        "contactInfo",
+        "employment",
+        "addresses"
+      ],
+      "type": "object",
+      "properties": {
+        "extClientId": {
+          "description": "Идентификатор клиента (ID абонента)",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\d 0-9a-zA-Z]*$",
+          "type": "string"
+        },
+        "personalData": {
+          "$ref": "#/definitions/PersonalData",
+          "description": "Персональные данные клиента."
+        },
+        "sex": {
+          "description": "Код пола участника сделки. Значение в соответствии со справочником «Пол участника сделки»",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "type": "string"
+        },
+        "resident": {
+          "description": "Признак, что клиент является налоговым резидентом только РФ.",
+          "type": "boolean"
+        },
+        "snils": {
+          "description": "СНИЛС",
+          "maxLength": 11,
+          "minLength": 11,
+          "pattern": "^\\d*$",
+          "type": "string"
+        },
+        "regLive": {
+          "description": "Признак совпадения адреса постоянной регистрации и адреса фактического проживания",
+          "type": "boolean"
+        },
+        "previousName": {
+          "$ref": "#/definitions/PreviousName",
+          "description": "Прежнее ФИО"
+        },
+        "identityDocuments": {
+          "description": "Список ДУЛ",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IdentityDocument"
+          }
+        },
+        "incomes": {
+          "description": "Доходы",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Income"
+          }
+        },
+        "properties": {
+          "description": "Список собственности",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Property"
+          }
+        },
+        "contactInfo": {
+          "$ref": "#/definitions/ContactInfo",
+          "description": "Контакты"
+        },
+        "employment": {
+          "$ref": "#/definitions/Employment",
+          "description": "Занятость"
+        },
+        "addresses": {
+          "description": "Адреса",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PersonalData": {
+      "description": "Персональные данные участника сделки",
+      "required": [
+        "surname",
+        "name",
+        "birthDate",
+        "birthPlace"
+      ],
+      "type": "object",
+      "properties": {
+        "surname": {
+          "description": "Фамилия",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
+          "type": "string"
+        },
+        "name": {
+          "description": "Имя",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
+          "type": "string"
+        },
+        "patronymic": {
+          "description": "Отчество",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
+          "type": "string"
+        },
+        "birthDate": {
+          "description": "Дата рождения",
+          "type": "string"
+        },
+        "birthPlace": {
+          "description": "Место рождения",
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[.,\\/()\\\\\\-\\－\"«»_ 0-9а-яёА-ЯЁ]*$",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PreviousName": {
+      "description": "Прежнее ФИО",
+      "type": "object",
+      "properties": {
+        "surname": {
+          "description": "Прежняя фамилия",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
+          "type": "string"
+        },
+        "name": {
+          "description": "Прежнее имя",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
+          "type": "string"
+        },
+        "patronymic": {
+          "description": "Прежнее отчество",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[\\-\\－ а-яёА-ЯЁ]*$",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "IdentityDocument": {
+      "description": "ДУЛ",
+      "required": [
+        "docType",
+        "docNum",
+        "docSeries",
+        "issueDate",
+        "departCode",
+        "isActual"
+      ],
+      "type": "object",
+      "properties": {
+        "docType": {
+          "description": "Тип ДУЛ",
+          "enum": [
+            "1"
+          ],
+          "type": "string"
+        },
+        "docNum": {
+          "description": "Номер документа",
+          "maxLength": 6,
+          "minLength": 6,
+          "pattern": "^\\d*$",
+          "type": "string"
+        },
+        "docSeries": {
+          "description": "Серия документа",
+          "maxLength": 4,
+          "minLength": 4,
+          "pattern": "^\\d*$",
+          "type": "string"
+        },
+        "issueDate": {
+          "description": "Дата выдачи",
+          "type": "string"
+        },
+        "issuedBy": {
+          "description": "Кем выдан документ",
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[.,\\/()\\\\\\-\\－\"«»№ 0-9а-яёА-ЯЁ]*$",
+          "type": "string"
+        },
+        "departCode": {
+          "description": "Категория (код подразделения)",
+          "maxLength": 6,
+          "minLength": 6,
+          "pattern": "^\\d*$",
+          "type": "string"
+        },
+        "isActual": {
+          "description": "Признак актуального паспорта",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Income": {
+      "description": "Доход",
+      "required": [
+        "confirmationType",
+        "incomeType",
+        "avgMonthlyIncome"
+      ],
+      "type": "object",
+      "properties": {
+        "confirmationType": {
+          "description": "Тип подтверждения дохода",
+          "enum": [
+            "appForm"
+          ],
+          "type": "string"
+        },
+        "incomeType": {
+          "description": "Код типа дохода",
+          "enum": [
+            "StatedIncome",
+            "OtherIncome"
+          ],
+          "type": "string"
+        },
+        "avgMonthlyIncome": {
+          "description": "Сумма среднемесячных доходов",
+          "maximum": 1000000000,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Property": {
+      "description": "Собственность клиента",
+      "required": [
+        "propertyType",
+        "existence"
+      ],
+      "type": "object",
+      "properties": {
+        "propertyType": {
+          "description": "Тип собственности",
+          "enum": [
+            "auto",
+            "property"
+          ],
+          "type": "string"
+        },
+        "existence": {
+          "description": "Признак наличия собственности",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContactInfo": {
+      "description": "Контакты клиента",
+      "required": [
+        "phones"
+      ],
+      "type": "object",
+      "properties": {
+        "phones": {
+          "description": "Контактные телефоны",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Phone"
+          }
+        },
+        "email": {
+          "description": "E-mail",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9а-яёА-ЯЁ._\\-+']+@[a-zA-Z0-9а-яёА-ЯЁ\\-_]+\\.[a-zA-Z0-9а-яёА-ЯЁ\\-_]+$",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Phone": {
+      "description": "Телефон клиента",
+      "required": [
+        "phoneType",
+        "number"
+      ],
+      "type": "object",
+      "properties": {
+        "phoneType": {
+          "description": "Код типа контакта (телефона)",
+          "enum": [
+            "CELLPHONE",
+            "LIVEADDRESS_PHONE",
+            "REGADDRESS_PHONE",
+            "KADRPHONE",
+            "EMPLOYERPHONE"
+          ],
+          "type": "string"
+        },
+        "number": {
+          "description": "Номер телефона",
+          "maxLength": 12,
+          "minLength": 12,
+          "pattern": "^\\+7\\d{10}$",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Employment": {
+      "description": "Работа",
+      "type": "object",
+      "properties": {
+        "positionName": {
+          "description": "Наименование должности",
+          "maxLength": 250,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "lastExperience": {
+          "$ref": "#/definitions/Experience",
+          "description": "Стаж на последнем месте работы"
+        },
+        "totalExperience": {
+          "$ref": "#/definitions/Experience",
+          "description": "Общий стаж"
+        },
+        "employer": {
+          "$ref": "#/definitions/Employer",
+          "description": "Работодатель"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Experience": {
+      "description": "Стаж",
+      "required": [
+        "years",
+        "months"
+      ],
+      "type": "object",
+      "properties": {
+        "years": {
+          "description": "Стаж работы - в годах",
+          "maximum": 70,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "months": {
+          "description": "Стаж работы - в месяцах",
+          "maximum": 11,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Employer": {
+      "description": "Работодатель",
+      "required": [
+        "fullName",
+        "inn"
+      ],
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "description": "Полное наименование организации",
+          "maxLength": 300,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "inn": {
+          "description": "ИНН работодателя",
+          "maxLength": 12,
+          "minLength": 10,
+          "pattern": "^\\d*$",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Address": {
+      "description": "Адрес",
+      "required": [
+        "addressType",
+        "countryCode",
+        "regionCode",
+        "postalCode"
+      ],
+      "type": "object",
+      "properties": {
+        "addressType": {
+          "description": "Код типа адреса",
+          "enum": [
+            "1",
+            "2",
+            "4",
+            "3"
+          ],
+          "type": "string"
+        },
+        "countryCode": {
+          "description": "Код страны",
+          "enum": [
+            "643"
+          ],
+          "type": "string"
+        },
+        "regionCode": {
+          "description": "Код региона",
+          "enum": [
+            "77",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "78",
+            "79",
+            "83",
+            "86",
+            "87",
+            "89",
+            "91",
+            "92",
+            "99"
+          ],
+          "type": "string"
+        },
+        "postalCode": {
+          "description": "Почтовый индекс",
+          "maxLength": 6,
+          "minLength": 6,
+          "pattern": "^\\d*$",
+          "type": "string"
+        },
+        "district": {
+          "description": "Наименование района",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "city": {
+          "description": "Наименование города",
+          "maxLength": 60,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "locality": {
+          "description": "Наименование населенного пункта",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "street": {
+          "description": "Наименование улицы",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "house": {
+          "description": "Дом",
+          "maxLength": 10,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "housing": {
+          "description": "Корпус",
+          "maxLength": 10,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "building": {
+          "description": "Строение",
+          "maxLength": 10,
+          "minLength": 1,
+          "pattern": "^[ !\"#$&'()*+,\\-./0-9:;=?@A-Z\\[\\\\\\]\\^_`a-z\\{|\\}~А-ЯЁа-яё№«»-‘’]*$",
+          "type": "string"
+        },
+        "flat": {
+          "description": "Квартира",
+          "maxLength": 10,
+          "minLength": 1,
+          "pattern": "^[.,'\":;&?_()№@\\\\\\/\\-\\d 0-9a-zA-Z]*$",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateApplicationResponse": {
+      "description": "Ответ на заявку",
+      "properties": {
+        "id": {
+          "description": "Номер заявки в Банке",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RequestCreditParameters": {
+      "description": "Запрос параметров кредита",
+      "required": [
+        "direction",
+        "subProgramCode",
+        "amount",
+        "term",
+        "currency"
+      ],
+      "type": "object",
+      "properties": {
+        "direction": {
+          "description": "Направление кредитования в соответствии со справочником «Направление кредитования». Допустимое значение «01.00.00» - Потребительское кредитование",
+          "enum": [
+            "01.00.00"
+          ],
+          "type": "string"
+        },
+        "subProgramCode": {
+          "description": "Код подпрограммы в соответствии со справочником «Тип подпрограммы»",
+          "enum": [
+            "01.18.00"
+          ],
+          "type": "string"
+        },
+        "amount": {
+          "description": "Запрашиваемая сумма кредита",
+          "maximum": 10000000,
+          "minimum": 0,
+          "type": "number"
+        },
+        "term": {
+          "description": "Запрашиваемый срок кредита",
+          "maximum": 600,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "currency": {
+          "description": "Валюта кредита. Допустимое значение – 810 (рубль)",
+          "enum": [
+            810
+          ],
+          "type": "integer"
+        },
+        "insurance": {
+          "description": "Признак наличия страховки",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
