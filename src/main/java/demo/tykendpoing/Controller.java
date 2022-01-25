@@ -1,14 +1,19 @@
 package demo.tykendpoing;
 
+import demo.tykendpoing.service.GlobalTransactionIdProvider;
+import demo.tykendpoing.service.LoanService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.Random;
 
 @RestController
+@AllArgsConstructor
 public class Controller {
+    private final LoanService loanService;
+    private final GlobalTransactionIdProvider globalTransactionIdProvider;
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> onError() {
@@ -17,14 +22,13 @@ public class Controller {
 
     @PostMapping("/applications")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> postApplications(@RequestBody Map<String, Object> body,
-                                  @RequestHeader(value = "X-Global-Transaction-ID", required = false) Long transactionId) {
+    public ResponseEntity<ApplicationResponse> postApplications(@RequestBody Map<String, Object> body,
+                                  @RequestHeader(value = "X-Global-Transaction-ID", required = false) String transactionId) {
         if (transactionId == null) {
-            transactionId = Math.max(0, new Random().nextLong());
+            transactionId = globalTransactionIdProvider.newId().toString();
         }
-        final long id = Math.max(0, new Random().nextLong());
         return ResponseEntity.ok()
                 .header("X-Global-Transaction-ID", String.valueOf(transactionId))
-                .body(Map.of("id", id));
+                .body(loanService.submitApplication(body));
     }
 }
