@@ -1,0 +1,96 @@
+{
+  "externalId": "550e8400-e29b-41d4-a726-446655440305",
+  "applicationStatusCode": "INPUT_INITIAL",
+  "applicationStatusName": "Обработка завершена",
+  "participant": {
+    "extClientId": "r4534-fdfd243r-sdfs",
+    "personalData": {
+      "surname": "Тестов",
+      "name": "Илья",
+      "patronymic": "Александрович",
+      "birthDate": "1992-05-25",
+      "birthPlace": "Москва"
+    },
+    "sex": "1",
+    "resident": true,
+    "snils": "12312312312",
+    "regLive": true,
+    "previousName": {
+      "surname": "Сидоров",
+      "name": "Василий",
+      "patronymic": "Яковлевич"
+    },
+    "identityDocuments": [
+      {
+        "docType": "1",
+        "docNum": "889520",
+        "docSeries": "7780",
+        "issueDate": "2018-10-10",
+        "issuedBy": "УФМС Москвы",
+        "departCode": "770599",
+        "isActual": true
+      }
+    ],
+    "incomes": [
+      {
+        "confirmationType": "appForm",
+        "incomeType": "StatedIncome",
+        "avgMonthlyIncome": 60000
+      }
+    ],
+    "properties": [
+      {
+        "propertyType": "property",
+        "existence": true
+      }
+    ],
+    "contactInfo": {
+      "phones": [
+        {
+          "phoneType": "CELLPHONE",
+          "number": "+79123456789"
+        }
+      ],
+      "email": "ivanov@mail.example"
+    },
+    "employment": {
+      "positionName": "Директор",
+      "lastExperience": {
+        "years": 10,
+        "months": 5
+      },
+      "totalExperience": {
+        "years": 10,
+        "months": 5
+      },
+      "employer": {
+        "fullName": "ООО \"Василек\"",
+        "inn": "1234567899"
+      }
+    },
+    "addresses": [
+      {
+        "addressType": "2",
+        "countryCode": "643",
+        "regionCode": "77",
+        "postalCode": "105043",
+        "district": "район",
+        "city": "город",
+        "locality": "пункт",
+        "street": "улица",
+        "house": "дом",
+        "housing": "корпус",
+        "building": "строение",
+        "flat": "40"
+      }
+    ]
+  },
+  "requestCreditParameters": {
+    "direction": "01.00.00",
+    "subProgramCode": "01.18.00",
+    "amount": 50000,
+    "term": 20,
+    "currency": 810,
+    "insurance": true
+  }
+}
