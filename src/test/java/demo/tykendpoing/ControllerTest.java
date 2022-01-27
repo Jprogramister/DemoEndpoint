@@ -11,8 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Map;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -27,7 +25,7 @@ public class ControllerTest {
     @Test
     public void testPostApplicationsWithTransactionId() throws Exception {
         final var response = mockMvc.perform(post("/applications")
-                .content(new ObjectMapper().writeValueAsString(Map.of()))
+                .content(TestBody.getValid())
                 .contentType(MediaType.APPLICATION_JSON)
                 .header("X-Global-Transaction-ID", "1"))
                 .andExpect(jsonPath("$.id").isNumber())
@@ -39,7 +37,7 @@ public class ControllerTest {
     @Test
     public void testPostApplicationsWithoutTransactionId() throws Exception {
         final var response = mockMvc.perform(post("/applications")
-                .content(new ObjectMapper().writeValueAsString(Map.of()))
+                .content(TestBody.getValid())
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").isNumber())
                 .andReturn().getResponse();

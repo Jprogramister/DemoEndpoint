@@ -10,10 +10,10 @@ import java.util.Map;
 @AllArgsConstructor
 public class LoanService {
     private final BankServiceMock bankService;
-    private final ClientInfoServiceMock clientInfoService;
+    private final ClientInfoService clientInfoService;
 
     public ApplicationResponse submitApplication(Map<String, Object> app) {
-        clientInfoService.enrichWithClientInfo(app);
+        clientInfoService.enrichWithClientInfo((Map<String, Object>) app.get("participant"));
         final long applicationId = bankService.sendLoanApplication(app);
         return new ApplicationResponse(applicationId);
     }
